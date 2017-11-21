@@ -1,0 +1,63 @@
+<!doctype html>
+
+
+<!--
+	========================================================================
+
+	WebGL2 Volume Ray Casting
+		
+	Copyright (C) 2017 Roland Rytz <roland@draemm.li>
+	Licensed under the GNU Affero General Public License Version 3
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Affero General Public License as
+	published by the Free Software Foundation, either version 3 of the
+	License, or (at your option) any later version.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+	For more information, see:
+	https://draemm.li/various/volumeRendering/LICENSE
+	
+	========================================================================
+-->
+
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8"> 
+		<title>
+			search2json
+		</title>
+		<style>
+			*{
+				font-family: monospace;
+			}
+
+			#output{
+				white-space: pre;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<p>
+			Add some arguments to the url of this page, or try one of these links:<br>
+			<a href="./?foo=bar&qux=baz">?foo=bar&amp;qux=baz</a><br>
+			<a href="./?qux=baz">?qux=baz</a><br>
+			<a href="./?title=Lorem%20ipsum%20dolor%20sit%20amet&volume=3&year=2007">?title=Lorem%20ipsum%20dolor%20sit%20amet&amp;volume=3&amp;year=2007</a><br>
+		</p>
+		<h2>JSON output:</h2>
+		<div id="output"></div>
+
+
+		<script src="./search2json.js" type="text/javascript"></script>
+		<script type="text/javascript">
+
+			var search = search2json();
+			console.log(search);
+
+			document.getElementById("output").innerHTML = JSON.stringify(search, null, 2);
+
+		</script>
+	</body>
+</html>
